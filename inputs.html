@@ -1,0 +1,146 @@
+
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" id="b" name="b" value="10"> +
+  <input type="number" id="a" name="a" value="1"> =
+  <output name="result" for="a b">0</output>
+</form>
+<hr>
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" id="b" name="b" value="50"> +
+  <input type="number" id="a" name="a" value="10"> =
+  <output name="result" for="a b">2100</output>
+</form>
+<hr>
+<form class="" action="index.html" method="post">
+  <hr>
+  <label for="pet-select">Choose a pet:</label>
+
+<select id="pet-select">
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+    <option value="parrot">Parrot</option>
+    <option value="spider">Spider</option>
+    <option value="goldfish">Goldfish</option>
+</select>
+<hr>
+<label for="dino-select">Choose a dinosaur:</label>
+<select id="dino-select">
+    <optgroup label="Theropods">
+        <option>Tyrannosaurus</option>
+        <option>Velociraptor</option>
+        <option>Deinonychus</option>
+    </optgroup>
+    <optgroup label="Sauropods">
+        <option>Diplodocus</option>
+        <option>Saltasaurus</option>
+        <option>Apatosaurus</option>
+    </optgroup>
+</select>
+
+<hr>
+  <label for="ice-cream-choice">Choose a flavor:</label>
+<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+<datalist id="ice-cream-flavors">
+    <option value="Chocolate">
+    <option value="Coconut">
+    <option value="Mint">
+    <option value="Strawberry">
+    <option value="Vanilla">
+</datalist>
+  <hr>
+  <label for="myBrowser">Choose a browser from this list:</label>
+<input list="browsers" id="myBrowser" name="myBrowser" />
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Internet Explorer">
+  <option value="Opera">
+  <option value="Safari">
+  <option value="Microsoft Edge">
+</datalist>
+<hr>
+<label for="file">File progress:</label>
+
+<progress id="file" max="100" value="70"> 70% </progress>
+<br>
+<progress value="70" max="100">70 %</progress>
+<hr>
+<label for="name">Name (4 to 8 characters):</label>
+
+<input type="text" id="name" name="name" required
+       minlength="4" maxlength="8" size="10">
+       <hr>
+       <div class="preference">
+    <label for="cheese">Do you like cheese?</label>
+    <input type="checkbox" name="cheese" id="cheese">
+</div>
+
+<div class="preference">
+    <label for="peas">Do you like peas?</label>
+    <input type="checkbox" name="peas" id="peas">
+</div>
+
+       <hr>
+       <fieldset>
+    <legend>Choose your favorite monster</legend>
+
+    <input type="radio" id="kraken" name="monster">
+    <label for="kraken">Kraken</label><br/>
+
+    <input type="radio" id="sasquatch" name="monster">
+    <label for="sasquatch">Sasquatch</label><br/>
+
+    <input type="radio" id="mothman" name="monster">
+    <label for="mothman">Mothman</label>
+</fieldset>
+<hr>
+<form action="#">
+  <fieldset disabled>
+    <legend>Disabled fieldset</legend>
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" id="name" value="Chris">
+    </div>
+    <div>
+      <label for="pwd">Archetype: </label>
+      <input type="password" id="pwd" value="Wookie">
+    </div>
+  </fieldset>
+</form>
+<hr>
+<button class="favorite styled"
+        type="button">
+    Add to favorites
+</button>
+<hr>
+<button name="button">Press me</button>
+<hr>
+<label for="fuel">Fuel level:</label>
+
+<meter id="fuel"
+       min="0" max="100"
+       low="33" high="66" optimum="80"
+       value="50">
+    at 50/100
+</meter>
+<p>Heat the oven to <meter min="200" max="500"
+  value="350">350 degrees</meter>.</p>
+  <p>He got a <meter low="69" high="80" max="100"
+  value="84">B</meter> on the exam.</p>
+  <hr>
+  <label for="story">Tell us your story:</label>
+
+<textarea id="story" name="story"
+          rows="5" cols="33">
+It was a dark and stormy night...
+</textarea>
+<hr>
+<input type="date" name="" value="">
+<hr>
+<input type="radio" name="" value="">
+<hr>
+<input type="range" name="" value="">
+</form>
