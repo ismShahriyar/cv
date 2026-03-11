@@ -1,97 +1,430 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
-  <title>🌏Shahriyar`s Personal Site🌐</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shahriyar Ismayilov | Geographer & Surveyor</title>
+
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  </head>
+
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --accent: #1f6f8b;
+      --accent-soft: #e8f3f7;
+      --shadow: 0 10px 30px rgba(31, 41, 51, 0.08);
+      --radius: 18px;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8fafb 0%, #f4f6f3 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 48px 0 28px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid rgba(217, 226, 236, 0.85);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .profile-wrap {
+      text-align: center;
+    }
+
+    .profile-wrap img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      background: #eef2f5;
+    }
+
+    .hero-text h1 {
+      margin: 0 0 8px;
+      font-size: 2.4rem;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-text .subtitle {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .hero-text p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 8px 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav a {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid rgba(217, 226, 236, 0.85);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .summary-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skill-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skill-table td {
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill-table td:last-child {
+      text-align: right;
+      white-space: nowrap;
+      font-size: 1rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-year {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .timeline-text {
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      display: inline-block;
+      padding: 10px 16px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    footer {
+      padding: 28px 0 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 820px) {
+      .hero-card,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-wrap {
+        text-align: left;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
 <body>
-  <table cellspacing=20px>
-    <tr>
-      <td><img src="circle-cropped.png" alt="Shahriyar`s Profile picture"></td>
-      <td>
-        <h1>Shahriyar Ismayilov</<h1>
-          <h4><em>Geographer - <strong>Surveyor</strong>.</em></h4>
-          <p>🌏I`m a PhD Student of Geography at <a href="http://bsu.edu.az/">BSU</a>. I work as a surveyor over 10 years at severeal internataional and local projects</p>
-      </td>
-    </tr>
-  </table>
 
-  <hr>
-  <h3>Education</h3>
-  <hr>
-  <h3>Sowtware Skills</h3>
-  <table>
-      <tr>
-        <td>ArcGIS Desktop</td>
-        <td>🌕🌕🌕🌕🌑</td>
-      </tr>
-      <tr>
-        <td>ArcGIS Pro</td>
-        </td>
-        <td>🌕🌕🌕🌗🌑</td>
-      </tr>
-    </tr>
-      <tr>
-        <td>Global Mapper</td>
-        </td>
-        <td>🌕🌕🌗🌑🌑</td>
-      </tr>
-      <tr>
-        <td>EIVA</td>
-        </td>
-        <td>🌕🌕🌕🌕🌑</td>
-      </tr>
-    </table>
-  <hr>
-  <h3>Life Timleline</h3>
-  <p>1994-2005 Lankaran Secondary School</p>
-  <p>2005-2009 BSU Geography</p>
-  <p>2009-2010 Millitary</p>
-  <p>2012-2016 SOCAR</p>
-  <p>2016-till now Saipem</p>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Events</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1994-2005</td>
-        <td>Lankaran Secondary School</td>
-      </tr>
-      <tr>
-        <td>2005-2009</td>
-        <td>BSU Geography</td>
-      </tr>
-      <tr>
-        <td>2009-2010</td>
-        <td>Millitary</td>
-      </tr>
-      <tr>
-        <td>2012-2016</td>
-        <td>SOCAR</td>
-      </tr>
-      <tr>
-        <td>2016-up today</td>
-        <td>Saipem</td>
-      </tr>
-    </tbody>
-    <tfoot>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-card">
+        <div class="profile-wrap">
+          <img src="circle-cropped.png" alt="Shahriyar Ismayilov profile picture">
+        </div>
 
-    </tfoot>
+        <div class="hero-text">
+          <h1>Shahriyar Ismayilov</h1>
+          <p class="subtitle">Geographer • Surveyor • Data Processor</p>
 
-  </table>
-  <h3><a href="hobbies.html">My Hobbies</a></h3>
-  <hr>
-  <h3><a href="contactme.html">Contact me</a></h3>
+          <p>
+            I am a Ph.D. Candidate in Geography at
+            <a href="http://bsu.edu.az/" target="_blank" rel="noopener">Baku State University</a>,
+            with around 14 years of professional experience in surveying and geospatial data processing.
+          </p>
+
+          <p>
+            My career combines land surveying, offshore hydrographic surveying, GIS, cartography,
+            and long-term practical work in spatial data analysis. Maps play a central role in my life,
+            reflecting both my profession and my passion.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">14+ years experience</span>
+            <span class="pill">GIS & Cartography</span>
+            <span class="pill">Land Surveying</span>
+            <span class="pill">Hydrographic Surveying</span>
+          </div>
+
+          <nav class="nav">
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#timeline">Timeline</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="contactme.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="section-card">
+        <h2 class="section-title">Professional Summary</h2>
+        <ul class="summary-list">
+          <li>About 14 years of experience, primarily as a Surveyor and Data Processor.</li>
+          <li>5 years as a land surveyor (topographer) and data processor.</li>
+          <li>9 years as an offshore hydrographic (online) surveyor and data processor.</li>
+          <li>Since 2005, continuous study and practice across multiple branches of Geography.</li>
+          <li>Strong background in GIS, cartography, geospatial workflows, and practical mapping.</li>
+          <li>Participant in numerous local and international projects and training programs.</li>
+          <li>Committee Member of the Azerbaijan Orienteering Federation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-card">
+        <h2 class="section-title">Education</h2>
+        <p style="margin:0; color:var(--muted);">
+          Ph.D. Candidate in Geography, with academic and practical specialization in geography,
+          GIS, cartography, surveying, and spatial data interpretation.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="grid-2">
+        <div class="section-card">
+          <h2 class="section-title">Software Skills</h2>
+          <table class="skill-table">
+            <tr>
+              <td>ArcGIS Desktop</td>
+              <td>🌕🌕🌕🌕🌑</td>
+            </tr>
+            <tr>
+              <td>ArcGIS Pro</td>
+              <td>🌕🌕🌕🌗🌑</td>
+            </tr>
+            <tr>
+              <td>Global Mapper</td>
+              <td>🌕🌕🌗🌑🌑</td>
+            </tr>
+            <tr>
+              <td>EIVA</td>
+              <td>🌕🌕🌕🌕🌑</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="section-card">
+          <h2 class="section-title">Core Fields</h2>
+          <ul class="summary-list">
+            <li>Geography</li>
+            <li>GIS (Geographic Information Systems)</li>
+            <li>Cartography</li>
+            <li>Land Surveying</li>
+            <li>Hydrographic / Offshore Surveying</li>
+            <li>Data Processing</li>
+            <li>Geospatial Analysis</li>
+            <li>Map Production</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="section-card">
+        <h2 class="section-title">Life Timeline</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1994 – 2005</div>
+            <div class="timeline-text">Lankaran Secondary School</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2005 – 2009</div>
+            <div class="timeline-text">BSU Geography</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2009 – 2010</div>
+            <div class="timeline-text">Military Service</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2012 – 2016</div>
+            <div class="timeline-text">SOCAR</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2016 – Present</div>
+            <div class="timeline-text">Saipem</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="links">
+      <div class="section-card">
+        <h2 class="section-title">More</h2>
+        <div class="footer-links">
+          <a href="hobbies.html">My Hobbies</a>
+          <a href="contactme.html">Contact Me</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© Shahriyar Ismayilov — Personal Academic & Professional Website</p>
+    </footer>
+  </div>
 
 </body>
-<html>
+</html>
